@@ -22,13 +22,11 @@
 
     
     <div class="container-fluid">
-        <div class="align-middle">
+        <div class="row-fluid">
             {% if category %}
-            <img style="" class="my_image catesize" src="{{ category.image.url }}" alt="{{ category.name }}">
+            <img style="width: 100%;height:50%;padding-block: 1rem;padding-left: 20rem; padding-right: 20rem;" class="my_image catesize" src="{{ category.image.url }}" alt="{{ category.name }}">
         </div><br>
-            <ul class="text-center my_title">{{category.name}}</ul>
-            <div class="mx_auto ">
-        </div>
+            <h2 class="text-center my_title">{{category.name}}</h2>
         <p class="text-justify">
             {{category.description}}
         </p>
@@ -43,7 +41,7 @@
     <br>
     <div class="container-fluid">
         <div class="">
-            <h3 class="text-center my_title">ALL PRODUCT COLLECTIONS</h3>
+            <h2 class="text-center my_title">ALL PRODUCT COLLECTIONS</h2>
         </div>
     </div><br>
 
@@ -55,7 +53,7 @@
                 <div class="my_bottom_margin col-9 col-sm-12 col-md-12 col-lg-4" style="padding-block:1rem; padding-right: 5rem;padding-left: 5rem;">
                     <div class="card">
                         <a href="{{product.get_url}}"><img src="{{product.image.url}}" alt="{{product.name}}" class="card-img-top img-fluid" style="width:27rem; height:22rem;"></a>
-                        <h3 style="padding:.4rem;">{{product.name}}</h3>
+                        <h5 style="padding:.4rem;">{{product.name}}</h5>
                         <h5 class="price" style="padding:.4rem;">₹ {{product.price}}</h5>
                     {% if product.stock <= 0 %}
                         <a class="my_style"><b>Out of stock</b></a>
@@ -69,7 +67,7 @@
                      </div>
                 </div>
                 {% endfor %}
-            </div>
+            </div><br>
 
             <div class="paginator">
                 <div class="mx-auto">

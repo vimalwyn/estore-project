@@ -20,29 +20,31 @@
     </div>
 </div>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="card-header">
-        <img class="card-img-top img-fluid" src="{{product.image.url}}" style="width:27rem; height:27rem;" alt="{{product.name}}">
-        <div class="">
-            <div class="my_product"><br>
-                <h4>{{product.name}}</h4>
-                <h5 class="price">₹{{product.price}}</h5>
-                <h4>Product Description</h4>
-                <p>{{product.description}}</p>
-            {% if product.stock <= 0 %}
-                <p class="my_style"><b>Out of stock</b></p>
-            {% else %}
-                <div class="d-grid gap-2 d-md-block">
-                <a href="{% url 'cart:add_cart' product.id %}" class="btn btn-primary btn-lg"><h4>Add to cart</h4></a>
-                <a href="" class="btn btn-success btn-lg"><h4>Buy now</h4></a>
-            {% endif %}
+    <br>
+        <div class="row">
+            <div class=" col-12 col-sm-12 col-md-12 col-lg-6 text-center">
+                <div class="">
+                    <img  src="{{product.image.url}}" alt="{{product.name}}">
+                </div>
             </div>
-            </div>
+    
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                    <div class="container-fluid">
+                    <h1 class="my_product_title">{{product.name}}</h1>
+                    <p>₹ {{product.price}}</p>
+                    <p class="my_title">Product Description</p>
+                    <p class="text-justify my_prod_text">{{product.description}}</p>
+    
+                    {% if product.stock <= 0 %}
+                    <p class="text-justify my_prod_text"><b>Out of stock</b></p>
+                    {% else %}
+                    <a class="btn btn-primary" href="{% url 'cart:add_cart' product.id %}">Add to cart</a>
+                    {% endif %}
+    
+                    </div>
+                </div>
+            
         </div>
-    </div>
-  </div>
-</div>
-<br><br>
+    </div><br><br>
 
 {% endblock %}
