@@ -11,8 +11,8 @@
     {% endif %}
 {% endblock %}
 {% block content %}
-
-<div class="row my_product_row_class">
+<br>
+<div class="container-fluid">
     <div class="mx_auto">
         <p>
             <a href="{% url 'shop:AllprodCat' %}">Home</a> | <a href="{{product.category.get_url}}">{{product.category}}</a> | {{product.name}}
@@ -26,7 +26,7 @@
         <img class="card-img-top img-fluid" src="{{product.image.url}}" style="width:27rem; height:27rem;" alt="{{product.name}}">
         <div class="">
             <div class="my_product"><br>
-                <h3>{{product.name}}</h3>
+                <h4>{{product.name}}</h4>
                 <h5 class="price">₹{{product.price}}</h5>
                 <h4>Product Description</h4>
                 <p>{{product.description}}</p>

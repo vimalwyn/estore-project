@@ -1,6 +1,6 @@
 .nav-item{
     letter-spacing: .2em;
-    font-size:15px;
+    font-size:14px;
     text-transform: uppercase;
     align-items: center;
     font: bold;
@@ -21,7 +21,7 @@
     }
 
 .card-body{
-    font-size:15px;
+    font-size:1px;
     }
 
 .container{
@@ -32,22 +32,17 @@
 
 
 .my_product{
-    font-size:15px;
-    align:absolute;
+    font-size:10px;
+    align-self:absolute;
     }
 
 .my_title{
     color: black;
     background-color: 1F618D;
-    padding: .1rem;
-    font-size:20px;
+    padding: 1rem;
+    font-size:15px;
     font: bold;
     text-transform: uppercase;
-    }
-
-.my_style{
-    color: #ff0000;
-    text-align: left;
     }
 
 .price {
@@ -58,7 +53,7 @@
 .card button {
   border: none;
   outline: 0;
-  padding: 12px;
+  padding: 10px;
   color: white;
   background-color: #000;
   text-align: center;

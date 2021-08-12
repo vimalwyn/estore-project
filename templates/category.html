@@ -20,35 +20,41 @@
 
 {% block content %}
 
-    {% if category %}
-    <div class="row my_row_class">
-        <div class="mx-auto">
+    
+    <div class="container-fluid">
+        <div class="align-middle">
+            {% if category %}
+            <img style="" class="my_image catesize" src="{{ category.image.url }}" alt="{{ category.name }}">
+        </div><br>
             <ul class="text-center my_title">{{category.name}}</ul>
             <div class="mx_auto ">
         </div>
+        <p class="text-justify">
+            {{category.description}}
+        </p>
     </div>
 
-    {% else %}
-    <div class="container">
-        <div class="row">
-            <img style="width: 100%; height:10rem;" src="{% static 'image/banner.png' %}" class="img-fluid img-thumbnail" alt="Our Products">
+            {% else %}
+    <div class="container-fluid">
+        <div class="">
+            <img style="width: 100%; height:20rem;" src="{% static 'image/banner.png' %}" class="img-fluid img-thumbnail" alt="Our Products">
         </div>
     </div>
     <br>
-    <div class="container">
-        <div class="row">
+    <div class="container-fluid">
+        <div class="">
             <h3 class="text-center my_title">ALL PRODUCT COLLECTIONS</h3>
         </div>
     </div><br>
 
     {% endif %}
 
-        <div class="container">
-            <div class="row">
+        <div class="container-fluid">
+            <div class="row mx-auto">
                 {% for product in products %}
-                <div class="col-sm-3" style="padding:.5rem;">
+                <div class="my_bottom_margin col-9 col-sm-12 col-md-12 col-lg-4" style="padding-block:1rem; padding-right: 5rem;padding-left: 5rem;">
                     <div class="card">
-                        <a href="{{product.get_url}}"><img src="{{product.image.url}}" alt="{{product.name}}" class="card-img-top img-fluid" style="width:27rem; height:27rem;"></a>
+                        <a href="{{product.get_url}}"><img src="{{product.image.url}}" alt="{{product.name}}" class="card-img-top img-fluid" style="width:27rem; height:22rem;"></a>
                         <h3 style="padding:.4rem;">{{product.name}}</h3>
                         <h5 class="price" style="padding:.4rem;">₹ {{product.price}}</h5>
                     {% if product.stock <= 0 %}
